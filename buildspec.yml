@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt -t .
+  build:
+    commands:
+      - echo Zipping the application...
+      - zip -r lambda.zip .
+artifacts:
+  files:
+    - lambda.zip
